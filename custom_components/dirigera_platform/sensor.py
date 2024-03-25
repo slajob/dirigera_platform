@@ -316,7 +316,13 @@ class ikea_controller(SensorEntity):
 
     @property
     def device_info(self) -> DeviceInfo:
-        return SensorDeviceClass.BATTERY
+        return DeviceInfo(
+            identifiers={("dirigera_platform", self._json_data.id)},
+            name=self._json_data.attributes.custom_name,
+            manufacturer=self._json_data.attributes.manufacturer,
+            model=self._json_data.attributes.model,
+            sw_version=self._json_data.attributes.firmware_version,
+        )
 
     @property
     def native_value(self):
