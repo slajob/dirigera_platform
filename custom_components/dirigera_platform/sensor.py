@@ -15,9 +15,9 @@ logger = logging.getLogger("custom_components.dirigera_platform")
 
 
 async def async_setup_entry(
-    hass: core.HomeAssistant,
-    config_entry: config_entries.ConfigEntry,
-    async_add_entities,
+        hass: core.HomeAssistant,
+        config_entry: config_entries.ConfigEntry,
+        async_add_entities,
 ):
     logger.debug("EnvSensor & Controllers Starting async_setup_entry")
     """Setup sensors from a config entry created in the integrations UI."""
@@ -70,6 +70,7 @@ async def async_setup_entry(
 
     logger.debug("Found {} env devices to setup...".format(len(env_devices)))
     logger.debug("Found {} env entities to setup...".format(len(env_sensors)))
+    logger.debug("Found {} controller devices to setup...".format(len(controller_devices)))
 
     async_add_entities(env_sensors)
     async_add_entities(controller_devices)
@@ -85,8 +86,8 @@ class ikea_vindstyrka_device:
 
     def update(self):
         if (
-            self._updated_at is None
-            or (datetime.datetime.now() - self._updated_at).total_seconds() > 30
+                self._updated_at is None
+                or (datetime.datetime.now() - self._updated_at).total_seconds() > 30
         ):
             try:
                 self._json_data = self._hub.get_environment_sensor_by_id(
@@ -143,7 +144,7 @@ class ikea_vindstyrka_device:
 
 class ikea_env_base_entity(SensorEntity):
     def __init__(
-        self, ikea_env_device: ikea_vindstyrka_device, id_suffix: str, name_suffix: str
+            self, ikea_env_device: ikea_vindstyrka_device, id_suffix: str, name_suffix: str
     ):
         logger.debug("ikea_env_base_entity ctor...")
         self._ikea_env_device = ikea_env_device
@@ -222,7 +223,7 @@ class WhichPM25(Enum):
 
 class ikea_vindstyrka_pm25(ikea_env_base_entity):
     def __init__(
-        self, ikea_env_device: ikea_vindstyrka_device, pm25_type: WhichPM25
+            self, ikea_env_device: ikea_vindstyrka_device, pm25_type: WhichPM25
     ) -> None:
         logger.debug("ikea_vindstyrka_pm25 ctor...")
         self._pm25_type = pm25_type
@@ -314,18 +315,13 @@ class ikea_controller(SensorEntity):
     def is_on(self):
         return self._json_data.attributes.is_on
 
+    # @property
+    # def device_info(self) -> DeviceInfo:
+    #    return SensorDeviceClass.BATTERY
+
     @property
     def icon(self):
         return "mdi:battery"
-
-    def device_info(self) -> DeviceInfo:
-        return DeviceInfo(
-            identifiers={("dirigera_platform", self._json_data.id)},
-            name=self._json_data.attributes.custom_name,
-            manufacturer=self._json_data.attributes.manufacturer,
-            model=self._json_data.attributes.model,
-            sw_version=self._json_data.attributes.firmware_version,
-        )
 
     @property
     def native_value(self):
