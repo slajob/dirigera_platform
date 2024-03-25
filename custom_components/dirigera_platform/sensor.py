@@ -315,6 +315,9 @@ class ikea_controller(SensorEntity):
         return self._json_data.attributes.is_on
 
     @property
+    def icon(self):
+        return "mdi:battery"
+
     def device_info(self) -> DeviceInfo:
         return DeviceInfo(
             identifiers={("dirigera_platform", self._json_data.id)},
