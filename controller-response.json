@@ -1,0 +1,143 @@
+{
+  "id": "1c6751e9-9b50-4e70-becb-615b2c98ee50",
+  "time": "2024-04-15T19:53:30.294Z",
+  "specversion": "3.150.0",
+  "source": "urn:com:ikea:homesmart:iotc:rulesengine",
+  "type": "sceneUpdated",
+  "data": {
+    "id": "592edaae-0bac-4689-b31a-197cccf36ed6",
+    "info": {
+      "name": "Test",
+      "icon": "scenes_clean_sparkles"
+    },
+    "type": "userScene",
+    "triggers": [
+      {
+        "id": "549164c0-f3ab-49a1-b7dc-1d05704808de",
+        "type": "app",
+        "triggeredAt": "2024-04-15T17:46:29.096Z",
+        "disabled": false
+      },
+      {
+        "id": "ed3d5e33-d503-42cd-b0b2-469f106812f2",
+        "type": "controller",
+        "triggeredAt": "2024-04-15T19:53:30.293Z",
+        "disabled": false,
+        "trigger": {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+          ],
+          "controllerType": "shortcutController",
+          "clickPattern": "singlePress",
+          "buttonIndex": 0,
+          "deviceId": "b55c75ec-829c-4623-a167-0b537569c9e2_1"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "98bb9c74-2899-4cc8-bca3-d7ba111a96ff_1",
+        "type": "device",
+        "deviceId": "98bb9c74-2899-4cc8-bca3-d7ba111a96ff_1",
+        "enabled": true,
+        "attributes": {
+          "isOn": false
+        }
+      }
+    ],
+    "commands": [],
+    "createdAt": "2024-04-15T16:48:31.309Z",
+    "lastCompleted": "2024-04-15T18:42:54.093Z",
+    "lastTriggered": "2024-04-15T18:42:54.093Z",
+    "undoAllowedDuration": 30,
+    "lastUndo": "2024-04-15T17:01:21.553Z"
+  }
+}
+{
+  "id": "b897d19e-e2fb-4087-8f02-b796bf132f42",
+  "time": "2024-04-15T19:53:30.330Z",
+  "specversion": "3.150.0",
+  "source": "urn:com:ikea:homesmart:iotc:rulesengine",
+  "type": "sceneUpdated",
+  "data": {
+    "id": "592edaae-0bac-4689-b31a-197cccf36ed6",
+    "info": {
+      "name": "Test",
+      "icon": "scenes_clean_sparkles"
+    },
+    "type": "userScene",
+    "triggers": [
+      {
+        "id": "549164c0-f3ab-49a1-b7dc-1d05704808de",
+        "type": "app",
+        "triggeredAt": "2024-04-15T17:46:29.096Z",
+        "disabled": false
+      },
+      {
+        "id": "ed3d5e33-d503-42cd-b0b2-469f106812f2",
+        "type": "controller",
+        "triggeredAt": "2024-04-15T19:53:30.293Z",
+        "disabled": false,
+        "trigger": {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+          ],
+          "controllerType": "shortcutController",
+          "clickPattern": "singlePress",
+          "buttonIndex": 0,
+          "deviceId": "b55c75ec-829c-4623-a167-0b537569c9e2_1"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "98bb9c74-2899-4cc8-bca3-d7ba111a96ff_1",
+        "type": "device",
+        "deviceId": "98bb9c74-2899-4cc8-bca3-d7ba111a96ff_1",
+        "enabled": true,
+        "attributes": {
+          "isOn": false
+        }
+      }
+    ],
+    "commands": [],
+    "createdAt": "2024-04-15T16:48:31.309Z",
+    "lastCompleted": "2024-04-15T19:53:30.315Z",
+    "lastTriggered": "2024-04-15T19:53:30.315Z",
+    "undoAllowedDuration": 30,
+    "lastUndo": "2024-04-15T17:01:21.553Z"
+  }
+}
+
+
+{
+  "id": "bbc5f4be-a8e2-412f-abc7-4c0302a0cbed",
+  "time": "2024-04-15T19:53:30.000Z",
+  "specversion": "3.150.0",
+  "source": "urn:com:ikea:homesmart:iotc:zigbee",
+  "type": "deviceStateChanged",
+  "data": {
+    "id": "98bb9c74-2899-4cc8-bca3-d7ba111a96ff_1",
+    "type": "light",
+    "deviceType": "light",
+    "createdAt": "2023-04-03T22:23:10.000Z",
+    "isReachable": true,
+    "lastSeen": "2024-04-15T21:53:30.000Z",
+    "attributes": {
+      "isOn": false
+    },
+    "remoteLinks": []
+  }
+}
