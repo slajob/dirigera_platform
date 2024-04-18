@@ -1,11 +1,11 @@
 {
-  "id": "7715e37f-f4ee-4df1-a58f-5f4c97d1ea18", #id of response probably
-  "time": "2024-04-18T15:31:45.654Z",
+  "id": "efc0be2f-4219-45f6-9527-e5e63907751a",
+  "time": "2024-04-18T15:31:45.688Z",
   "specversion": "3.150.0",
   "source": "urn:com:ikea:homesmart:iotc:rulesengine",
   "type": "sceneUpdated",
   "data": {
-    "id": "592edaae-0bac-4689-b31a-197cccf36ed6", #scene id
+    "id": "592edaae-0bac-4689-b31a-197cccf36ed6",
     "info": {
       "name": "Test",
       "icon": "scenes_clean_sparkles"
@@ -34,9 +34,9 @@
             "Sun"
           ],
           "controllerType": "shortcutController",
-          "clickPattern": "singlePress", #press type
+          "clickPattern": "singlePress",
           "buttonIndex": 0,
-          "deviceId": "b55c75ec-829c-4623-a167-0b537569c9e2_1" #trigger device id (shortcut 6)
+          "deviceId": "b55c75ec-829c-4623-a167-0b537569c9e2_1" #device trigger id (shortcut 6)
         }
       }
     ],
@@ -53,11 +53,9 @@
     ],
     "commands": [],
     "createdAt": "2024-04-15T16:48:31.309Z",
-    "lastCompleted": "2024-04-15T19:53:30.315Z",
-    "lastTriggered": "2024-04-15T19:53:30.315Z",
+    "lastCompleted": "2024-04-18T15:31:45.663Z",
+    "lastTriggered": "2024-04-18T15:31:45.663Z",
     "undoAllowedDuration": 30,
     "lastUndo": "2024-04-15T17:01:21.553Z"
   }
 }
-
-

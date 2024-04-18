@@ -9,8 +9,8 @@ dirigera_hub = dirigera.Hub(
 )
 
 
-shortcut = dirigera_hub.get_controllers()[2]
-print(shortcut.id)
+# shortcut = dirigera_hub.get_controllers()[2]
+# print(shortcut.id)
 
 def prettify(message):
     print(type(message))

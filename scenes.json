@@ -1,0 +1,196 @@
+[
+    {
+        "id": "bcf31547-4130-4195-91c7-d05f4696944c",
+        "info": {
+            "name": "Marlena Slawek Playlist",
+            "icon": "scenes_clean_sparkles"
+        },
+        "type": "userScene",
+        "triggers": [
+            {
+                "id": "c63ba548-17a5-440c-9898-f9aaf9adf6ab",
+                "type": "app",
+                "triggeredAt": "2024-04-14T20:23:07.546Z",
+                "disabled": false
+            },
+            {
+                "id": "bf6fbc67-b137-49fa-9b0d-3fc8225b31d2",
+                "type": "controller",
+                "triggeredAt": "2024-04-17T07:31:42.786Z",
+                "disabled": false,
+                "trigger": {
+                    "days": [
+                        "Mon",
+                        "Tue",
+                        "Wed",
+                        "Thu",
+                        "Fri",
+                        "Sat",
+                        "Sun"
+                    ],
+                    "controllerType": "shortcutController",
+                    "clickPattern": "longPress",
+                    "buttonIndex": 0,
+                    "deviceId": "1a33ec9b-0f58-4bdd-94b6-99c3823fc234_1"
+                }
+            }
+        ],
+        "actions": [],
+        "commands": [],
+        "createdAt": "2023-04-03T20:36:34.907Z",
+        "lastCompleted": "2024-04-17T07:31:42.804Z",
+        "lastTriggered": "2024-04-17T07:31:42.804Z",
+        "undoAllowedDuration": 30,
+        "lastUndo": "2024-04-14T20:23:07.552Z"
+    },
+    {
+        "id": "18778cd1-e662-48af-8293-5208cd612564",
+        "info": {
+            "name": "Play liked songs",
+            "icon": "scenes_clean_sparkles"
+        },
+        "type": "userScene",
+        "triggers": [
+            {
+                "id": "821db9d6-dfaa-4e88-83ec-7a5c2ae0ac97",
+                "type": "app",
+                "triggeredAt": "2023-04-19T09:44:56.732Z",
+                "disabled": false
+            },
+            {
+                "id": "1be2a3d1-0c4e-4b7d-beff-71b1ea4d01ca",
+                "type": "controller",
+                "triggeredAt": "2024-04-14T20:31:02.498Z",
+                "disabled": false,
+                "trigger": {
+                    "days": [
+                        "Mon",
+                        "Tue",
+                        "Wed",
+                        "Thu",
+                        "Fri",
+                        "Sat",
+                        "Sun"
+                    ],
+                    "controllerType": "shortcutController",
+                    "clickPattern": "doublePress",
+                    "buttonIndex": 0,
+                    "deviceId": "1a33ec9b-0f58-4bdd-94b6-99c3823fc234_1"
+                }
+            }
+        ],
+        "actions": [],
+        "commands": [],
+        "createdAt": "2023-04-03T20:34:53.248Z",
+        "lastCompleted": "2024-04-14T20:31:02.513Z",
+        "lastTriggered": "2024-04-14T20:31:02.513Z",
+        "undoAllowedDuration": 30
+    },
+    {
+        "id": "26efad0f-8c99-4dc6-84b3-43cbb21affa2",
+        "info": {
+            "name": "Kitchen blind sunset",
+            "icon": "scenes_moon"
+        },
+        "type": "userScene",
+        "triggers": [
+            {
+                "id": "b0880956-7882-4cff-917e-edb63e9b0fa3",
+                "type": "app",
+                "triggeredAt": "2024-04-15T17:46:35.868Z",
+                "disabled": false
+            },
+            {
+                "id": "8c6b1364-bb06-44a6-9a9d-509dbd24f2a0",
+                "type": "sunriseSunset",
+                "triggeredAt": "2024-04-17T17:38:00.716Z",
+                "disabled": false,
+                "trigger": {
+                    "days": [
+                        "Tue",
+                        "Wed",
+                        "Sun",
+                        "Mon",
+                        "Fri",
+                        "Sat",
+                        "Thu"
+                    ],
+                    "type": "sunset",
+                    "offset": 0
+                },
+                "nextTriggerAt": "2024-04-18T17:38:00.000Z"
+            }
+        ],
+        "actions": [
+            {
+                "id": "87808a3f-b5db-4c47-a528-5bdd1dbd8860_1",
+                "type": "device",
+                "deviceId": "87808a3f-b5db-4c47-a528-5bdd1dbd8860_1",
+                "enabled": true,
+                "attributes": {
+                    "blindsTargetLevel": 100,
+                    "blindsTargetTilt": 50
+                }
+            }
+        ],
+        "commands": [],
+        "createdAt": "2023-12-22T13:09:59.173Z",
+        "lastCompleted": "2024-04-17T17:38:00.742Z",
+        "lastTriggered": "2024-04-17T17:38:00.742Z",
+        "undoAllowedDuration": 30
+    },
+    {
+        "id": "592edaae-0bac-4689-b31a-197cccf36ed6",
+        "info": {
+            "name": "Test",
+            "icon": "scenes_clean_sparkles"
+        },
+        "type": "userScene",
+        "triggers": [
+            {
+                "id": "549164c0-f3ab-49a1-b7dc-1d05704808de",
+                "type": "app",
+                "triggeredAt": "2024-04-15T17:46:29.096Z",
+                "disabled": false
+            },
+            {
+                "id": "ed3d5e33-d503-42cd-b0b2-469f106812f2",
+                "type": "controller",
+                "triggeredAt": "2024-04-18T15:31:45.654Z",
+                "disabled": false,
+                "trigger": {
+                    "days": [
+                        "Mon",
+                        "Tue",
+                        "Wed",
+                        "Thu",
+                        "Fri",
+                        "Sat",
+                        "Sun"
+                    ],
+                    "controllerType": "shortcutController",
+                    "clickPattern": "singlePress",
+                    "buttonIndex": 0,
+                    "deviceId": "b55c75ec-829c-4623-a167-0b537569c9e2_1"
+                }
+            }
+        ],
+        "actions": [
+            {
+                "id": "98bb9c74-2899-4cc8-bca3-d7ba111a96ff_1",
+                "type": "device",
+                "deviceId": "98bb9c74-2899-4cc8-bca3-d7ba111a96ff_1",
+                "enabled": true,
+                "attributes": {
+                    "isOn": false
+                }
+            }
+        ],
+        "commands": [],
+        "createdAt": "2024-04-15T16:48:31.309Z",
+        "lastCompleted": "2024-04-18T15:31:45.663Z",
+        "lastTriggered": "2024-04-18T15:31:45.663Z",
+        "undoAllowedDuration": 30,
+        "lastUndo": "2024-04-15T17:01:21.553Z"
+    }
+]

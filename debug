@@ -1,0 +1,65 @@
+        "id": "b55c75ec-829c-4623-a167-0b537569c9e2_1",
+        "relationId": "b55c75ec-829c-4623-a167-0b537569c9e2",
+        "type": "controller",
+        "deviceType": "shortcutController",
+        "createdAt": "2024-04-11T17:35:46.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T15:21:17.000Z",
+        "attributes": {
+            "customName": "Shortcut button 6",
+
+
+    {
+        "id": "592edaae-0bac-4689-b31a-197cccf36ed6",
+        "info": {
+            "name": "Test",
+            "icon": "scenes_clean_sparkles"
+        },
+        "type": "userScene",
+        "triggers": [
+            {
+                "id": "549164c0-f3ab-49a1-b7dc-1d05704808de",
+                "type": "app",
+                "triggeredAt": "2024-04-15T17:46:29.096Z",
+                "disabled": false
+            },
+            {
+                "id": "ed3d5e33-d503-42cd-b0b2-469f106812f2",
+                "type": "controller",
+                "triggeredAt": "2024-04-18T15:31:45.654Z",
+                "disabled": false,
+                "trigger": {
+                    "days": [
+                        "Mon",
+                        "Tue",
+                        "Wed",
+                        "Thu",
+                        "Fri",
+                        "Sat",
+                        "Sun"
+                    ],
+                    "controllerType": "shortcutController",
+                    "clickPattern": "singlePress",
+                    "buttonIndex": 0,
+                    "deviceId": "b55c75ec-829c-4623-a167-0b537569c9e2_1"
+                }
+            }
+        ],
+        "actions": [
+            {
+                "id": "98bb9c74-2899-4cc8-bca3-d7ba111a96ff_1",
+                "type": "device",
+                "deviceId": "98bb9c74-2899-4cc8-bca3-d7ba111a96ff_1",
+                "enabled": true,
+                "attributes": {
+                    "isOn": false
+                }
+            }
+        ],
+        "commands": [],
+        "createdAt": "2024-04-15T16:48:31.309Z",
+        "lastCompleted": "2024-04-18T15:31:45.663Z",
+        "lastTriggered": "2024-04-18T15:31:45.663Z",
+        "undoAllowedDuration": 30,
+        "lastUndo": "2024-04-15T17:01:21.553Z"
+    }

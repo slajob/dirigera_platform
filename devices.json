@@ -1,0 +1,658 @@
+[
+    {
+        "id": "87808a3f-b5db-4c47-a528-5bdd1dbd8860_1",
+        "type": "blinds",
+        "deviceType": "blinds",
+        "createdAt": "2023-11-19T10:11:32.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T10:14:39.000Z",
+        "attributes": {
+            "customName": "Kitchen blind",
+            "model": "KADRILJ roller blind",
+            "manufacturer": "IKEA of Sweden",
+            "firmwareVersion": "24.4.13",
+            "hardwareVersion": "1",
+            "serialNumber": "680AE2FFFED1887D",
+            "productCode": "E1752-140",
+            "batteryPercentage": 83,
+            "blindsTargetLevel": 0,
+            "blindsCurrentLevel": 0,
+            "blindsState": "stopped",
+            "permittingJoin": false,
+            "otaStatus": "upToDate",
+            "otaState": "readyToCheck",
+            "otaProgress": 0,
+            "otaPolicy": "autoUpdate",
+            "otaScheduleStart": "00:00",
+            "otaScheduleEnd": "00:00"
+        },
+        "capabilities": {
+            "canSend": [],
+            "canReceive": [
+                "customName",
+                "blindsCurrentLevel",
+                "blindsTargetLevel",
+                "blindsState"
+            ]
+        },
+        "room": {
+            "id": "a40bc2b4-ffe6-4b63-9612-9d0dc8d9a394",
+            "name": "Kitchen",
+            "color": "ikea_blue_no_58",
+            "icon": "rooms_kitchen"
+        },
+        "deviceSet": [],
+        "remoteLinks": [
+            "3d754a71-86b4-46f2-9885-85ddb32dbb35_1"
+        ],
+        "isHidden": false
+    },
+    {
+        "id": "a07be568-c483-458a-b227-a0a87376e9c3_1",
+        "type": "blinds",
+        "deviceType": "blinds",
+        "createdAt": "2023-09-11T18:58:40.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T08:39:11.000Z",
+        "attributes": {
+            "customName": "Left Blind",
+            "model": "KADRILJ roller blind",
+            "manufacturer": "IKEA of Sweden",
+            "firmwareVersion": "24.4.13",
+            "hardwareVersion": "1",
+            "serialNumber": "000D6FFFFEA193D1",
+            "productCode": "E1752-140",
+            "batteryPercentage": 65,
+            "blindsTargetLevel": 0,
+            "blindsCurrentLevel": 0,
+            "blindsState": "stopped",
+            "permittingJoin": false,
+            "otaStatus": "upToDate",
+            "otaState": "readyToCheck",
+            "otaProgress": 0,
+            "otaPolicy": "autoUpdate",
+            "otaScheduleStart": "00:00",
+            "otaScheduleEnd": "00:00"
+        },
+        "capabilities": {
+            "canSend": [],
+            "canReceive": [
+                "customName",
+                "blindsCurrentLevel",
+                "blindsTargetLevel",
+                "blindsState"
+            ]
+        },
+        "room": {
+            "id": "19df992a-d048-4c68-9743-f7f81a884144",
+            "name": "Living room",
+            "color": "ikea_green_no_65",
+            "icon": "rooms_sofa"
+        },
+        "deviceSet": [],
+        "remoteLinks": [
+            "edb20bcb-87d3-4be2-a6d5-4bd84efa13e1_1"
+        ],
+        "isHidden": false
+    },
+    {
+        "id": "3d754a71-86b4-46f2-9885-85ddb32dbb35_1",
+        "type": "controller",
+        "deviceType": "blindsController",
+        "createdAt": "2023-11-18T18:23:31.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T08:57:01.000Z",
+        "attributes": {
+            "customName": "Kitchen blind remote",
+            "model": "TRADFRI open/close remote",
+            "manufacturer": "IKEA of Sweden",
+            "firmwareVersion": "24.4.6",
+            "hardwareVersion": "1",
+            "serialNumber": "842E14FFFE73FA73",
+            "productCode": "E1766",
+            "batteryPercentage": 50,
+            "isOn": false,
+            "lightLevel": 1,
+            "blindsCurrentLevel": 0,
+            "blindsState": "",
+            "permittingJoin": false,
+            "otaStatus": "upToDate",
+            "otaState": "readyToCheck",
+            "otaProgress": 0,
+            "otaPolicy": "autoUpdate",
+            "otaScheduleStart": "00:00",
+            "otaScheduleEnd": "00:00"
+        },
+        "capabilities": {
+            "canSend": [
+                "isOn",
+                "lightLevel",
+                "blindsState"
+            ],
+            "canReceive": [
+                "customName"
+            ]
+        },
+        "room": {
+            "id": "a40bc2b4-ffe6-4b63-9612-9d0dc8d9a394",
+            "name": "Kitchen",
+            "color": "ikea_blue_no_58",
+            "icon": "rooms_kitchen"
+        },
+        "deviceSet": [],
+        "remoteLinks": [],
+        "isHidden": false
+    },
+    {
+        "id": "db24fc56-db66-45ed-b1ab-50105a5c7041_1",
+        "type": "blinds",
+        "deviceType": "blinds",
+        "createdAt": "2023-09-02T04:04:05.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T08:39:09.000Z",
+        "attributes": {
+            "customName": "Right blind",
+            "model": "KADRILJ roller blind",
+            "manufacturer": "IKEA of Sweden",
+            "firmwareVersion": "24.4.13",
+            "hardwareVersion": "1",
+            "serialNumber": "000D6FFFFE7C2DCB",
+            "productCode": "E1752-140",
+            "batteryPercentage": 76,
+            "blindsTargetLevel": 0,
+            "blindsCurrentLevel": 0,
+            "blindsState": "stopped",
+            "permittingJoin": false,
+            "otaStatus": "upToDate",
+            "otaState": "readyToCheck",
+            "otaProgress": 0,
+            "otaPolicy": "autoUpdate",
+            "otaScheduleStart": "00:00",
+            "otaScheduleEnd": "00:00"
+        },
+        "capabilities": {
+            "canSend": [],
+            "canReceive": [
+                "customName",
+                "blindsCurrentLevel",
+                "blindsTargetLevel",
+                "blindsState"
+            ]
+        },
+        "room": {
+            "id": "19df992a-d048-4c68-9743-f7f81a884144",
+            "name": "Living room",
+            "color": "ikea_green_no_65",
+            "icon": "rooms_sofa"
+        },
+        "deviceSet": [],
+        "remoteLinks": [
+            "bde0f7eb-640c-4903-b2c9-f06415b28ba2_1"
+        ],
+        "isHidden": false
+    },
+    {
+        "id": "bde0f7eb-640c-4903-b2c9-f06415b28ba2_1",
+        "type": "controller",
+        "deviceType": "blindsController",
+        "createdAt": "2023-09-08T19:45:49.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-17T20:08:45.000Z",
+        "attributes": {
+            "customName": "Right Blind remote",
+            "model": "TRADFRI open/close remote",
+            "manufacturer": "IKEA of Sweden",
+            "firmwareVersion": "24.4.6",
+            "hardwareVersion": "1",
+            "serialNumber": "000D6FFFFE7B8F5A",
+            "productCode": "E1766",
+            "batteryPercentage": 40,
+            "isOn": false,
+            "lightLevel": 1,
+            "blindsCurrentLevel": 0,
+            "blindsState": "",
+            "permittingJoin": false,
+            "otaStatus": "upToDate",
+            "otaState": "readyToCheck",
+            "otaProgress": 0,
+            "otaPolicy": "autoUpdate",
+            "otaScheduleStart": "00:00",
+            "otaScheduleEnd": "00:00"
+        },
+        "capabilities": {
+            "canSend": [
+                "isOn",
+                "lightLevel",
+                "blindsState"
+            ],
+            "canReceive": [
+                "customName"
+            ]
+        },
+        "room": {
+            "id": "19df992a-d048-4c68-9743-f7f81a884144",
+            "name": "Living room",
+            "color": "ikea_green_no_65",
+            "icon": "rooms_sofa"
+        },
+        "deviceSet": [],
+        "remoteLinks": [],
+        "isHidden": false
+    },
+    {
+        "id": "ca457af6-a89f-4f33-9c0c-b94060e607d5_1",
+        "type": "speaker",
+        "deviceType": "speaker",
+        "createdAt": "2023-12-19T02:32:40.396Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-14T09:15:38.245Z",
+        "attributes": {
+            "customName": "Frame Speaker",
+            "model": "SYMFONISK Picture frame S29 ColorBlack",
+            "manufacturer": "Sonos, Inc.",
+            "firmwareVersion": "78.1-52020",
+            "hardwareVersion": "1.34.1.9-2.2",
+            "serialNumber": "54-2A-1B-50-7A-6A:C",
+            "productCode": "S29Black",
+            "identifyStarted": "2023-12-19T02:32:40.396Z",
+            "identifyPeriod": 0,
+            "playback": "playbackPaused",
+            "playbackLastChangedTimestamp": "2024-04-14T09:09:57.422Z",
+            "playbackAudio": {},
+            "playbackPosition": {
+                "position": 0,
+                "timestamp": "2024-04-14T09:15:38.191Z"
+            },
+            "playbackAvailableActions": {
+                "crossfade": false,
+                "pause": false,
+                "repeat": [
+                    "off"
+                ],
+                "seek": false,
+                "shuffle": false,
+                "playbackNext": false,
+                "playbackPrev": false
+            },
+            "playbackModes": {
+                "crossfade": false,
+                "repeat": "off",
+                "shuffle": false
+            },
+            "volume": 38,
+            "isMuted": false,
+            "audioGroup": "d53d5443-30e3-48f8-8f74-3eb2318941f2"
+        },
+        "capabilities": {
+            "canSend": [],
+            "canReceive": [
+                "playback",
+                "playbackAudio",
+                "volume",
+                "isMuted"
+            ]
+        },
+        "deviceSet": [],
+        "remoteLinks": [],
+        "isHidden": true
+    },
+    {
+        "id": "b55c75ec-829c-4623-a167-0b537569c9e2_1",
+        "relationId": "b55c75ec-829c-4623-a167-0b537569c9e2",
+        "type": "controller",
+        "deviceType": "shortcutController",
+        "createdAt": "2024-04-11T17:35:46.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T15:21:17.000Z",
+        "attributes": {
+            "customName": "Shortcut button 6",
+            "firmwareVersion": "1.0.21",
+            "hardwareVersion": "1",
+            "manufacturer": "IKEA of Sweden",
+            "model": "SOMRIG shortcut button",
+            "productCode": "E2213",
+            "serialNumber": "287681FFFE4B8FBC",
+            "batteryPercentage": 100,
+            "switchLabel": "Shortcut 1",
+            "isOn": false,
+            "lightLevel": 1,
+            "permittingJoin": false,
+            "otaPolicy": "autoUpdate",
+            "otaProgress": 0,
+            "otaScheduleEnd": "00:00",
+            "otaScheduleStart": "00:00",
+            "otaState": "readyToCheck",
+            "otaStatus": "upToDate"
+        },
+        "capabilities": {
+            "canSend": [
+                "singlePress",
+                "longPress",
+                "doublePress"
+            ],
+            "canReceive": [
+                "customName"
+            ]
+        },
+        "room": {
+            "id": "19df992a-d048-4c68-9743-f7f81a884144",
+            "name": "Living room",
+            "color": "ikea_green_no_65",
+            "icon": "rooms_sofa"
+        },
+        "deviceSet": [],
+        "remoteLinks": [],
+        "isHidden": false
+    },
+    {
+        "id": "b55c75ec-829c-4623-a167-0b537569c9e2_2",
+        "relationId": "b55c75ec-829c-4623-a167-0b537569c9e2",
+        "type": "controller",
+        "deviceType": "shortcutController",
+        "createdAt": "2024-04-11T17:35:46.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T15:21:17.000Z",
+        "attributes": {
+            "customName": "",
+            "firmwareVersion": "1.0.21",
+            "hardwareVersion": "1",
+            "manufacturer": "IKEA of Sweden",
+            "model": "SOMRIG shortcut button",
+            "productCode": "E2213",
+            "serialNumber": "287681FFFE4B8FBC",
+            "switchLabel": "Shortcut 2",
+            "isOn": false,
+            "lightLevel": 1,
+            "permittingJoin": false,
+            "otaPolicy": "autoUpdate",
+            "otaProgress": 0,
+            "otaScheduleEnd": "00:00",
+            "otaScheduleStart": "00:00",
+            "otaState": "readyToCheck",
+            "otaStatus": "upToDate"
+        },
+        "capabilities": {
+            "canSend": [
+                "singlePress",
+                "longPress",
+                "doublePress"
+            ],
+            "canReceive": [
+                "customName"
+            ]
+        },
+        "deviceSet": [],
+        "remoteLinks": [],
+        "isHidden": false
+    },
+    {
+        "id": "2e902274-dd7c-4def-b785-3c0ac448fd3b_1",
+        "relationId": "2e902274-dd7c-4def-b785-3c0ac448fd3b",
+        "type": "gateway",
+        "deviceType": "gateway",
+        "createdAt": "2023-04-03T20:20:35.623Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T15:43:00.588Z",
+        "attributes": {
+            "customName": "Home",
+            "model": "DIRIGERA Hub for smart products",
+            "manufacturer": "IKEA of Sweden",
+            "firmwareVersion": "2.556.0",
+            "hardwareVersion": "P2.5",
+            "serialNumber": "2e902274-dd7c-4def-b785-3c0ac448fd3b",
+            "identifyStarted": "2024-04-10T01:32:25.000Z",
+            "identifyPeriod": 65534,
+            "otaStatus": "upToDate",
+            "otaState": "readyToCheck",
+            "otaProgress": 0,
+            "otaPolicy": "autoDownload",
+            "otaScheduleStart": "00:00",
+            "otaScheduleEnd": "00:00",
+            "permittingJoin": false,
+            "backendConnected": true,
+            "backendConnectionPersistent": true,
+            "backendOnboardingComplete": true,
+            "backendRegion": "eu-central-1",
+            "backendCountryCode": "PL",
+            "userConsents": [
+                {
+                    "name": "analytics",
+                    "value": "disabled"
+                },
+                {
+                    "name": "diagnostics",
+                    "value": "enabled"
+                }
+            ],
+            "logLevel": 3,
+            "coredump": false,
+            "timezone": "Europe/Warsaw",
+            "nextSunSet": "2024-04-18T17:38:00.000Z",
+            "nextSunRise": "2024-04-19T03:39:00.000Z",
+            "homestate": "home",
+            "countryCode": "XZ",
+            "coordinates": {
+                "latitude": 50.07813095018253,
+                "longitude": 20.09375797011137,
+                "accuracy": -1
+            },
+            "isOn": false
+        },
+        "capabilities": {
+            "canSend": [],
+            "canReceive": [
+                "customName",
+                "permittingJoin",
+                "userConsents",
+                "logLevel",
+                "time",
+                "timezone",
+                "countryCode",
+                "coordinates"
+            ]
+        },
+        "deviceSet": [],
+        "remoteLinks": []
+    },
+    {
+        "id": "5fbbccd6-8574-4a75-825c-df1d0c8e6b7f_1",
+        "type": "light",
+        "deviceType": "light",
+        "createdAt": "2023-04-03T22:24:58.000Z",
+        "isReachable": false,
+        "lastSeen": "2024-04-18T01:07:51.000Z",
+        "customIcon": "lighting_cone_pendant",
+        "attributes": {
+            "customName": "Kitchen Light",
+            "model": "TRADFRIbulbE27WSglobeopal1055lm",
+            "manufacturer": "IKEA of Sweden",
+            "firmwareVersion": "1.0.012",
+            "hardwareVersion": "1",
+            "serialNumber": "6C5CB1FFFE3108C3",
+            "productCode": "LED2003G10",
+            "isOn": true,
+            "startupOnOff": "startOn",
+            "lightLevel": 100,
+            "startUpCurrentLevel": -1,
+            "colorTemperature": 4000,
+            "colorTemperatureMin": 4000,
+            "colorTemperatureMax": 2202,
+            "startupTemperature": -1,
+            "colorMode": "temperature",
+            "identifyStarted": "2000-01-01T00:00:00.000Z",
+            "identifyPeriod": 0,
+            "permittingJoin": false,
+            "otaStatus": "upToDate",
+            "otaState": "readyToCheck",
+            "otaProgress": 0,
+            "otaPolicy": "autoUpdate",
+            "otaScheduleStart": "00:00",
+            "otaScheduleEnd": "00:00"
+        },
+        "capabilities": {
+            "canSend": [],
+            "canReceive": [
+                "customName",
+                "isOn",
+                "lightLevel",
+                "colorTemperature"
+            ]
+        },
+        "room": {
+            "id": "a40bc2b4-ffe6-4b63-9612-9d0dc8d9a394",
+            "name": "Kitchen",
+            "color": "ikea_blue_no_58",
+            "icon": "rooms_kitchen"
+        },
+        "deviceSet": [],
+        "remoteLinks": [],
+        "isHidden": false
+    },
+    {
+        "id": "edb20bcb-87d3-4be2-a6d5-4bd84efa13e1_1",
+        "type": "controller",
+        "deviceType": "blindsController",
+        "createdAt": "2023-07-12T04:34:18.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T09:58:19.000Z",
+        "attributes": {
+            "customName": "Left blind remote",
+            "model": "TRADFRI open/close remote",
+            "manufacturer": "IKEA of Sweden",
+            "firmwareVersion": "24.4.6",
+            "hardwareVersion": "1",
+            "serialNumber": "000D6FFFFED3CAEB",
+            "productCode": "E1766",
+            "batteryPercentage": 1,
+            "isOn": false,
+            "lightLevel": 1,
+            "blindsCurrentLevel": 0,
+            "blindsState": "",
+            "permittingJoin": false,
+            "otaStatus": "upToDate",
+            "otaState": "readyToCheck",
+            "otaProgress": 0,
+            "otaPolicy": "autoUpdate",
+            "otaScheduleStart": "00:00",
+            "otaScheduleEnd": "00:00"
+        },
+        "capabilities": {
+            "canSend": [
+                "isOn",
+                "lightLevel",
+                "blindsState"
+            ],
+            "canReceive": [
+                "customName"
+            ]
+        },
+        "room": {
+            "id": "19df992a-d048-4c68-9743-f7f81a884144",
+            "name": "Living room",
+            "color": "ikea_green_no_65",
+            "icon": "rooms_sofa"
+        },
+        "deviceSet": [],
+        "remoteLinks": [],
+        "isHidden": false
+    },
+    {
+        "id": "1a33ec9b-0f58-4bdd-94b6-99c3823fc234_1",
+        "type": "controller",
+        "deviceType": "shortcutController",
+        "createdAt": "2023-12-17T13:14:55.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T06:26:37.000Z",
+        "attributes": {
+            "customName": "Shortcut button",
+            "model": "TRADFRI SHORTCUT Button",
+            "manufacturer": "IKEA of Sweden",
+            "firmwareVersion": "24.4.6",
+            "hardwareVersion": "1",
+            "serialNumber": "DC8E95FFFE89D2BC",
+            "productCode": "E1812",
+            "batteryPercentage": 1,
+            "isOn": false,
+            "lightLevel": 1,
+            "permittingJoin": false,
+            "otaStatus": "upToDate",
+            "otaState": "readyToCheck",
+            "otaProgress": 0,
+            "otaPolicy": "autoUpdate",
+            "otaScheduleStart": "00:00",
+            "otaScheduleEnd": "00:00"
+        },
+        "capabilities": {
+            "canSend": [
+                "singlePress",
+                "doublePress",
+                "longPress"
+            ],
+            "canReceive": [
+                "customName"
+            ]
+        },
+        "room": {
+            "id": "19df992a-d048-4c68-9743-f7f81a884144",
+            "name": "Living room",
+            "color": "ikea_green_no_65",
+            "icon": "rooms_sofa"
+        },
+        "deviceSet": [],
+        "remoteLinks": [],
+        "isHidden": false
+    },
+    {
+        "id": "98bb9c74-2899-4cc8-bca3-d7ba111a96ff_1",
+        "type": "light",
+        "deviceType": "light",
+        "createdAt": "2023-04-03T22:23:10.000Z",
+        "isReachable": true,
+        "lastSeen": "2024-04-18T17:31:46.000Z",
+        "attributes": {
+            "customName": "Hood Light",
+            "model": "TRADFRIbulbE14WScandleopal470lm",
+            "manufacturer": "IKEA of Sweden",
+            "firmwareVersion": "1.1.003",
+            "hardwareVersion": "1",
+            "serialNumber": "A49E69FFFE9EEADC",
+            "productCode": "LED1949C5",
+            "isOn": false,
+            "startupOnOff": "startOn",
+            "lightLevel": 100,
+            "startUpCurrentLevel": -1,
+            "colorTemperature": 4016,
+            "colorTemperatureMin": 4000,
+            "colorTemperatureMax": 2202,
+            "startupTemperature": -1,
+            "colorMode": "temperature",
+            "identifyStarted": "2000-01-01T00:00:00.000Z",
+            "identifyPeriod": 0,
+            "permittingJoin": false,
+            "otaStatus": "upToDate",
+            "otaState": "readyToCheck",
+            "otaProgress": 0,
+            "otaPolicy": "autoUpdate",
+            "otaScheduleStart": "00:00",
+            "otaScheduleEnd": "00:00"
+        },
+        "capabilities": {
+            "canSend": [],
+            "canReceive": [
+                "customName",
+                "isOn",
+                "lightLevel",
+                "colorTemperature"
+            ]
+        },
+        "room": {
+            "id": "a40bc2b4-ffe6-4b63-9612-9d0dc8d9a394",
+            "name": "Kitchen",
+            "color": "ikea_blue_no_58",
+            "icon": "rooms_kitchen"
+        },
+        "deviceSet": [],
+        "remoteLinks": [],
+        "isHidden": false
+    }
+]
