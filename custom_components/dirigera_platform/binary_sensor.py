@@ -83,6 +83,19 @@ async def async_setup_entry(
         logger.debug(f"Found {len(hub_water_sensors)/2} water sensors to setup....")
         async_add_entities(water_sensors)
 
+        #TODO review this and check where message should be and scenes
+        hub_shortcut_sensors : list[Controller] = await hass.async_add_executor_job(hub.get_controllers)
+        shortcut_sensor_devices = [ikea_shortcut_device(hass, hub, hub_shortcut_sensor)
+                                   for hub_shortcut_sensor in hub_shortcut_sensors
+                                   ]
+        shortcuts = []
+        for device in shortcut_sensor_devices:
+            shortcuts.append(ikea_shortcut(device))
+
+        logger.debug(f"Found {len(shortcuts)} shortcuts sensors to setup....")
+        async_add_entities(shortcuts)
+
+
     logger.debug("Binary Sensor Complete async_setup_entry")
 
 class ikea_motion_sensor_device(ikea_base_device):
@@ -141,3 +154,8 @@ class ikea_shortcut(ikea_base_device_sensor, BinarySensorEntity):
     def __init__(self, device : ikea_shortcut_device):
         logger.debug("ikea_shortcut_device ctor...")
         super().__init__(device)
+        device.add_listener(self)
+
+    @property
+    def is_on(self):
+        return self._device.is_detected
