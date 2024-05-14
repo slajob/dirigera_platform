@@ -4,6 +4,7 @@ from dirigera import Hub
 from dirigera.devices.motion_sensor import MotionSensor
 from dirigera.devices.open_close_sensor import OpenCloseSensor
 from dirigera.devices.water_sensor import WaterSensor
+from dirigera.devices.controller import Controller
 
 from homeassistant import config_entries, core
 from homeassistant.components.binary_sensor import BinarySensorDeviceClass, BinarySensorEntity
@@ -131,3 +132,12 @@ class ikea_water_sensor(ikea_base_device_sensor, BinarySensorEntity):
     def is_on(self):
         # Note: the `is_detected` attribute is not present for Trådfri Motion Sensor E1745, only in the webhook events
         return self._device.water_leak_detected
+
+class ikea_shortcut_device(ikea_base_device):
+    def __init__(self, hass, hub, json_data):
+        super().__init__(hass, hub, json_data, hub.get_controller_by_id)
+
+class ikea_shortcut(ikea_base_device_sensor, BinarySensorEntity):
+    def __init__(self, device : ikea_shortcut_device):
+        logger.debug("ikea_shortcut_device ctor...")
+        super().__init__(device)
