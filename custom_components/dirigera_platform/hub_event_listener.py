@@ -16,7 +16,8 @@ process_events_from = {
     "outlet"          : ["isOn"],
     "light"           : ["isOn"],
     "openCloseSensor" : ["isOpen"],
-    "waterSensor"     : ["waterLeakDetected"]
+    "waterSensor"     : ["waterLeakDetected"],
+    "userScene": ["sceneUpdated"],
 }
 
 def to_snake_case(name:str) -> str:
@@ -44,7 +45,11 @@ class hub_event_listener(threading.Thread):
         try:
             logger.debug(f"rcvd message : {ws_msg}")
             msg = json.loads(ws_msg)
-            if "type" not in msg or msg['type'] != "deviceStateChanged":
+            if (
+                "type" not in msg
+                or msg["type"] != "deviceStateChanged"
+                and msg["type"] != "sceneUpdated"
+            ):
                 logger.debug(f"discarding non state message: {msg}")
                 return 
 
@@ -112,6 +117,18 @@ class hub_event_listener(threading.Thread):
                     delegate.async_schedule_update_ha_state(False)
                 else:
                     entity.async_schedule_update_ha_state(False)
+
+            print(info["info"]["name"])
+            if re.search(r"ha_dir-pla_(.+\d?)_(\w+)", info["info"]["name"]):
+                print("WORKING!!!")
+
+            if info["type"] == "userScene":
+                try:
+                    logger.debug(f"userScene triggered")
+                    entity._json_data.is_reachable=info["isReachable"] #here we have to trigger entity to make it callable like water and opensensor
+                except Exception as ex:
+                    logger.error(f"Failed to setattr is_reachable on device: {id} for msg: {msg}")
+                    logger.error(ex)
 
         except Exception as ex:
             logger.error("error processing hub event")

@@ -2,6 +2,7 @@
 
 import logging
 from typing import Any
+import re
 
 from dirigera import Hub
 from dirigera.devices.scene import Scene as DirigeraScene
@@ -16,6 +17,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DOMAIN
 from .icons import to_hass_icon
+from .hub_event_listener import hub_event_listener
 
 logger = logging.getLogger("custom_components.dirigera_platform")
 
@@ -54,6 +56,8 @@ class IkeaScene(Scene):
     @property
     def name(self) -> str:
         """Return name from Dirigera."""
+        if re.search(r"ha_dir-pla_(.+\d?)_(\w+)", self._dirigera_scene.info.name):
+            hub_event_listener.register(self._attr_unique_id, self)
         return self._dirigera_scene.info.name
 
     @property
