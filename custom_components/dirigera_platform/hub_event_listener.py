@@ -121,6 +121,7 @@ class hub_event_listener(threading.Thread):
             print(info["info"]["name"])
             if re.search(r"ha_dir-pla_(.+\d?)_(\w+)", info["info"]["name"]):
                 print("WORKING!!!")
+                entity._json_data.attributes
 
             if info["type"] == "userScene":
                 try:

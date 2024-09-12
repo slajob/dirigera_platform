@@ -158,4 +158,4 @@ class ikea_shortcut(ikea_base_device_sensor, BinarySensorEntity):
 
     @property
     def is_on(self):
-        return self._device.is_detected
+        return self._device.is_on
