@@ -1,10 +1,10 @@
 import threading
-import logging 
-import time 
-from typing import Any 
+import logging
+import time
+from typing import Any
 import json
-import re 
-from dirigera import Hub 
+import re
+from dirigera import Hub
 
 import websocket
 import ssl
@@ -12,52 +12,54 @@ import ssl
 logger = logging.getLogger("custom_components.dirigera_platform")
 
 process_events_from = {
-    "motionSensor"    : ["isDetected","isOn"],
-    "outlet"          : ["isOn"],
-    "light"           : ["isOn"],
-    "openCloseSensor" : ["isOpen"],
-    "waterSensor"     : ["waterLeakDetected"],
+    "motionSensor": ["isDetected", "isOn"],
+    "outlet": ["isOn"],
+    "light": ["isOn"],
+    "openCloseSensor": ["isOpen"],
+    "waterSensor": ["waterLeakDetected"],
     "userScene": ["sceneUpdated"],
 }
 
-def to_snake_case(name:str) -> str:
+
+def to_snake_case(name: str) -> str:
     return re.sub(r'(?<!^)(?=[A-Z])', '_', name).lower()
+
 
 class hub_event_listener(threading.Thread):
     device_registry = {}
 
     def register(id: str, device: any):
         if id in hub_event_listener.device_registry:
-            #logger.error(f"duplicate id: {id} requested registration")
-            return 
-        hub_event_listener.device_registry[id] = device 
+            # logger.error(f"duplicate id: {id} requested registration")
+            return
+        hub_event_listener.device_registry[id] = device
 
-    def __init__(self, hub : Hub):
+    def __init__(self, hub: Hub):
         super().__init__()
-        self._hub : Hub = hub
-        self._request_to_stop = False 
+        self._hub: Hub = hub
+        self._request_to_stop = False
 
-    def on_error(self, ws:Any, ws_msg:str):
+    def on_error(self, ws: Any, ws_msg: str):
         logger.debug(f"on_error hub event listener {ws_msg}")
-    
-    def on_message(self, ws:Any, ws_msg:str):
-        
+
+    def on_message(self, ws: Any, ws_msg: str):
+
         try:
             logger.debug(f"rcvd message : {ws_msg}")
             msg = json.loads(ws_msg)
             if (
-                "type" not in msg
-                or msg["type"] != "deviceStateChanged"
-                and msg["type"] != "sceneUpdated"
+                    "type" not in msg
+                    or msg["type"] != "deviceStateChanged"
+                    and msg["type"] != "sceneUpdated"
             ):
                 logger.debug(f"discarding non state message: {msg}")
-                return 
+                return
 
             if "data" not in msg or "id" not in msg['data']:
                 logger.info(f"discarding message as  key 'data' or 'data/id' not found: {msg}")
-                return  
-            
-            info = msg['data'] 
+                return
+
+            info = msg['data']
             id = info['id']
 
             device_type = None
@@ -77,28 +79,28 @@ class hub_event_listener(threading.Thread):
 
             if id not in hub_event_listener.device_registry:
                 logger.info(f"discarding message as device for id: {id} not found for msg: {msg}")
-                return 
+                return
             registry_value = hub_event_listener.device_registry[id]
-            
+
             delegate = None
-            entity = None 
+            entity = None
 
             if type(registry_value) is list:
                 delegate = registry_value[0]
                 entity = registry_value[1]
             else:
                 entity = registry_value
-             
+
             if "isReachable" in info:
                 try:
                     logger.debug(f"Setting {id} reachable as {info['isReachable']}")
-                    entity._json_data.is_reachable=info["isReachable"]
+                    entity._json_data.is_reachable = info["isReachable"]
                 except Exception as ex:
                     logger.error(f"Failed to setattr is_reachable on device: {id} for msg: {msg}")
                     logger.error(ex)
 
             to_process_attr = process_events_from[device_type]
-            
+
             if "attributes" in info:
                 attributes = info["attributes"]
                 for key in attributes:
@@ -108,7 +110,7 @@ class hub_event_listener(threading.Thread):
                     try:
                         key_attr = to_snake_case(key)
                         logger.debug(f"setting {key_attr}  to {attributes[key]}")
-                        setattr(entity._json_data.attributes,key_attr, attributes[key])
+                        setattr(entity._json_data.attributes, key_attr, attributes[key])
                         logger.error(entity._json_data)
                     except Exception as ex:
                         logger.warn(f"Failed to set attribute key: {key} converted to {key_attr} on device: {id}")
@@ -121,12 +123,12 @@ class hub_event_listener(threading.Thread):
             print(info["info"]["name"])
             if re.search(r"ha_dir-pla_(.+\d?)_(\w+)", info["info"]["name"]):
                 print("WORKING!!!")
-                entity._json_data.attributes
 
             if info["type"] == "userScene":
                 try:
                     logger.debug(f"userScene triggered")
-                    entity._json_data.is_reachable=info["isReachable"] #here we have to trigger entity to make it callable like water and opensensor
+                    entity._json_data.is_reachable = info[
+                        "isReachable"]  # here we have to trigger entity to make it callable like water and opensensor
                 except Exception as ex:
                     logger.error(f"Failed to setattr is_reachable on device: {id} for msg: {msg}")
                     logger.error(ex)
@@ -144,7 +146,7 @@ class hub_event_listener(threading.Thread):
                 header={"Authorization": f"Bearer {self._hub.token}"},
                 on_message=self.on_message)
             self._wsapp.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})
-            #self._hub.create_event_listener(on_message=self.on_message, on_error=self.on_error)
+            # self._hub.create_event_listener(on_message=self.on_message, on_error=self.on_error)
         except Exception as ex:
             logger.error("Error creating event listener...")
             logger.error(ex)
@@ -154,11 +156,11 @@ class hub_event_listener(threading.Thread):
 
         self._request_to_stop = True
         try:
-            #self._hub.stop_event_listener()
+            # self._hub.stop_event_listener()
             if self._wsapp is not None:
                 self._wsapp.close()
         except:
-            pass 
+            pass
         self.join()
         hub_event_listener.device_registry.clear()
         logger.info("Listener stopped..")

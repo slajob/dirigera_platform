@@ -7,7 +7,10 @@ from dirigera.devices.water_sensor import WaterSensor
 from dirigera.devices.controller import Controller
 
 from homeassistant import config_entries, core
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass, BinarySensorEntity
+from homeassistant.components.binary_sensor import (
+    BinarySensorDeviceClass,
+    BinarySensorEntity,
+)
 from homeassistant.const import CONF_IP_ADDRESS, CONF_TOKEN
 
 from .const import DOMAIN
@@ -17,6 +20,7 @@ from .base_classes import battery_percentage_sensor
 from .base_classes import ikea_base_device, ikea_base_device_sensor
 
 logger = logging.getLogger("custom_components.dirigera_platform")
+
 
 async def async_setup_entry(
     hass: core.HomeAssistant,
@@ -44,20 +48,29 @@ async def async_setup_entry(
         open_close_sensors = [mock_open_close_sensor1]
 
     else:
-
-        hub_motion_sensors : list[MotionSensor] = await hass.async_add_executor_job(hub.get_motion_sensors)
-        motion_sensor_devices : list[ikea_motion_sensor_device] = [ikea_motion_sensor_device(hass, hub, m) for m in hub_motion_sensors]
+        hub_motion_sensors: list[MotionSensor] = await hass.async_add_executor_job(
+            hub.get_motion_sensors
+        )
+        motion_sensor_devices: list[ikea_motion_sensor_device] = [
+            ikea_motion_sensor_device(hass, hub, m) for m in hub_motion_sensors
+        ]
 
         motion_sensors = []
         for device in motion_sensor_devices:
             motion_sensors.append(ikea_motion_sensor(device))
             motion_sensors.append(battery_percentage_sensor(device))
-    
-        logger.debug("Found {} motion_sensor entities to setup...".format(len(motion_sensors)/2))
+
+        logger.debug(
+            "Found {} motion_sensor entities to setup...".format(
+                len(motion_sensors) / 2
+            )
+        )
         async_add_entities(motion_sensors)
-    
-        hub_open_close_sensors : list[OpenCloseSensor] = await hass.async_add_executor_job(hub.get_open_close_sensors)
-        open_close_devices : list[ikea_open_close_device] = [
+
+        hub_open_close_sensors: list[
+            OpenCloseSensor
+        ] = await hass.async_add_executor_job(hub.get_open_close_sensors)
+        open_close_devices: list[ikea_open_close_device] = [
             ikea_open_close_device(hass, hub, open_close_sensor)
             for open_close_sensor in hub_open_close_sensors
         ]
@@ -67,14 +80,21 @@ async def async_setup_entry(
             open_close_sensors.append(ikea_open_close(device))
             open_close_sensors.append(battery_percentage_sensor(device))
 
-        logger.debug("Found {} open close entities to setup...".format(len(open_close_sensors)/2))
+        logger.debug(
+            "Found {} open close entities to setup...".format(
+                len(open_close_sensors) / 2
+            )
+        )
         async_add_entities(open_close_sensors)
 
-        hub_water_sensors : list[WaterSensor] = await hass.async_add_executor_job(hub.get_water_sensors)
-        water_sensor_devices = [ ikea_water_sensor_device(hass, hub, hub_water_sensor) 
-                                for hub_water_sensor in hub_water_sensors
-                            ]
-        
+        hub_water_sensors: list[WaterSensor] = await hass.async_add_executor_job(
+            hub.get_water_sensors
+        )
+        water_sensor_devices = [
+            ikea_water_sensor_device(hass, hub, hub_water_sensor)
+            for hub_water_sensor in hub_water_sensors
+        ]
+
         water_sensors = []
         for device in water_sensor_devices:
             water_sensors.append(battery_percentage_sensor(device))
@@ -83,11 +103,14 @@ async def async_setup_entry(
         logger.debug(f"Found {len(hub_water_sensors)/2} water sensors to setup....")
         async_add_entities(water_sensors)
 
-        #TODO review this and check where message should be and scenes
-        hub_shortcut_sensors : list[Controller] = await hass.async_add_executor_job(hub.get_controllers)
-        shortcut_sensor_devices = [ikea_shortcut_device(hass, hub, hub_shortcut_sensor)
-                                   for hub_shortcut_sensor in hub_shortcut_sensors
-                                   ]
+        # TODO review this and check where message should be and scenes
+        hub_shortcut_sensors: list[Controller] = await hass.async_add_executor_job(
+            hub.get_controllers
+        )
+        shortcut_sensor_devices = [
+            ikea_shortcut_device(hass, hub, hub_shortcut_sensor)
+            for hub_shortcut_sensor in hub_shortcut_sensors
+        ]
         shortcuts = []
         for device in shortcut_sensor_devices:
             shortcuts.append(ikea_shortcut(device))
@@ -95,28 +118,31 @@ async def async_setup_entry(
         logger.debug(f"Found {len(shortcuts)} shortcuts sensors to setup....")
         async_add_entities(shortcuts)
 
-
     logger.debug("Binary Sensor Complete async_setup_entry")
 
+
 class ikea_motion_sensor_device(ikea_base_device):
-    def __init__(self,hass, hub, json_data):
+    def __init__(self, hass, hub, json_data):
         logger.debug("ikea_motion_sensor_device ctor...")
         super().__init__(hass, hub, json_data, hub.get_motion_sensor_by_id)
 
-class ikea_motion_sensor(ikea_base_device_sensor, BinarySensorEntity):  
+
+class ikea_motion_sensor(ikea_base_device_sensor, BinarySensorEntity):
     def __init__(self, device: ikea_motion_sensor_device):
         logger.debug("ikea_motion_sensor ctor...")
         # No suffix or name prefix for backward compatibility
         super().__init__(device)
-   
+
     @property
     def is_on(self):
         return self._device.is_on or self._device.is_detected
+
 
 class ikea_open_close_device(ikea_base_device):
     def __init__(self, hass, hub, json_data):
         logger.debug("ikea_motion_sensor_device ctor...")
         super().__init__(hass, hub, json_data, hub.get_open_close_by_id)
+
 
 class ikea_open_close(ikea_base_device_sensor, BinarySensorEntity):
     def __init__(self, device: ikea_open_close_device):
@@ -132,26 +158,30 @@ class ikea_open_close(ikea_base_device_sensor, BinarySensorEntity):
     def is_on(self):
         return self._device.is_open
 
+
 class ikea_water_sensor_device(ikea_base_device):
     def __init__(self, hass, hub, json_data):
         super().__init__(hass, hub, json_data, hub.get_water_sensor_by_id)
 
+
 class ikea_water_sensor(ikea_base_device_sensor, BinarySensorEntity):
-    def __init__(self, device : ikea_water_sensor_device):
+    def __init__(self, device: ikea_water_sensor_device):
         logger.debug("ikea_water_sensor ctor...")
         super().__init__(device)
-    
+
     @property
     def is_on(self):
         # Note: the `is_detected` attribute is not present for Trådfri Motion Sensor E1745, only in the webhook events
         return self._device.water_leak_detected
 
+
 class ikea_shortcut_device(ikea_base_device):
     def __init__(self, hass, hub, json_data):
         super().__init__(hass, hub, json_data, hub.get_controller_by_id)
 
+
 class ikea_shortcut(ikea_base_device_sensor, BinarySensorEntity):
-    def __init__(self, device : ikea_shortcut_device):
+    def __init__(self, device: ikea_shortcut_device):
         logger.debug("ikea_shortcut_device ctor...")
         super().__init__(device)
         device.add_listener(self)
